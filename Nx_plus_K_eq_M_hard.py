@@ -2,25 +2,26 @@ import random
 import m_common
 
 #
-# python3 Nx_eq_M_hard.y
+# python3 Nx_plus_K_eq_M_hard..y
 #
-# Generates 10 questions of the form Nx = M, where both N & M are small numbers, the child
+# Generates 10 questions of the form Nx + K = M, where N,x & K are small numbers, the child
 # has to solve for "x"
 # 
 # How I use this program..
-# python3 Nx_eq_M_hard.py > qns_plus_answers.txt
+# python3 Nx_plus_K_eq_M_simple.py > qns_plus_answers.txt
 # cat qns_plus_answers.txt | grep -v answer > qns.txt
 # ... then printout qns.txt and hand over to the child :)
 #
 
 N_MAX = 10
 X_MAX = 30
+K_MAX = 30
 
-def gen_hard_mult(num_questions):
+def gen_eqns(num_questions):
     for i in range(num_questions):
-        (N, x, M) = m_common.gen_Nx_eq_M(N_MAX, X_MAX)
+        (N, x, K, M) = m_common.gen_Nx_plus_K_eq_M(N_MAX, X_MAX, K_MAX)
         print("Question %d" % i)
-        print("%dx = %d" % (N, M))
+        print("%dx + %d = %d" % (N, K, M))
         print("x = ?")
         print("answer %d" % x)
         print("**************************")
@@ -30,4 +31,4 @@ def parse_arguments():
 
 if __name__ == "__main__":
     parse_arguments()
-    gen_hard_mult(num_questions = 10)
+    gen_eqns(num_questions = 10)

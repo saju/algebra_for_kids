@@ -14,13 +14,13 @@ import m_common
 #
 
 N_MAX = 5
-M_MAX = 10
+X_MAX = 10
 
 def gen_simple_mult(num_questions):
     for i in range(num_questions):
-        (N, x, M) = m_common.gen_Nx_eq_M(N_MAX, M_MAX)
+        (N, x, M) = m_common.gen_Nx_eq_M(N_MAX, X_MAX)
         print("Question %d" % i)
-        print("%dx = %d" % (N, N * x))
+        print("%dx = %d" % (N, M))
         print("x = ?")
         print("answer %d" % x)
         print("**************************")
