@@ -1,0 +1,20 @@
+A simple program to generate linear eqns of the form Ax + B = C.
+
+My kids love maths and it is hard to spontaneously come up with linear equations for them to solve.
+I use this program to generate sets of linear equations that I can printout and give to me kids to
+keep them productively busy :)
+
+Usage:
+
+$ python3 ax_plus_b_eq_c.py > out.txt
+$ cat out.txt | grep -v answer > questions.txt
+... printout questions.txt ....
+
+Making the equations "harder"....
+
+$ python3 ax_plus_b_eq_c.py --minA -20 --maxA 30
+
+Will generate linear equations where "A" (the coefficient of x) can take values [-20, 30]. You can
+similarily tweak "x" with --minX/--maxX and B with --minB/--maxB.
+
+On the other hand, if you want to remove B completely, set "--minB 0 --maxB 0"
